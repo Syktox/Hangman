@@ -2,20 +2,11 @@ import { Button, StandardButton } from "std-widgets.slint";
 
 export component homeView
 { 
-    width: 100%;
-    height: 100%;
-
     // Callbacks
     callback start_clicked();
     callback settings_clicked();
     callback quit_clicked();
 
-    Image 
-    {   
-        source: @image-url("../assets/HomeBackground.png");
-        width: 100%;
-        height: 100%;
-    }
 
     VerticalLayout {
         alignment: center;
@@ -25,37 +16,28 @@ export component homeView
             text: "Hangman";
             horizontal-alignment: center;
             letter-spacing: 10px;
-            font-size: root.width / 11;
             color: #3E2723;
             font-italic: true;
             font-family: "Comic Sans MS";
             font-weight: 300;
         }
-      
+    
         VerticalLayout 
         {  
-            // Center Buttons 
-            padding-left: root.width / 3;
-            padding-right: root.width / 3;
-
-            padding-top: root.height / 3;
-            spacing: root.height / 20;
-
             Button {
                 text: "Start";
-                height: root.height / 12;
                 clicked => root.start_clicked();
             }
 
             Button {
                 text: "Settings";
-                height: root.height / 12;
+
                 clicked => root.settings_clicked();
             }
 
             Button {
                 text: "Quit";
-                height: root.height / 12;
+
                 clicked => root.quit_clicked();
             }
         }
